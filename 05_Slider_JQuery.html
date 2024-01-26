@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(149, 147, 147);
+        }
+
+        .container {
+            width: 1250px;
+            margin: 0 auto;
+        }
+
+        .sec-1 {
+            margin-top: 50px;
+            padding-block: 30px;
+        }
+
+        .slides {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: 1s;
+            background-color: red;
+        }
+
+        .slide:nth-child(2) {
+            background-color: green;
+        }
+
+        .slide:nth-child(3) {
+            background-color: blue;
+        }
+
+        .slide:nth-child(4) {
+            background-color: pink;
+        }
+
+        .slide:nth-child(5) {
+            background-color: purple;
+        }
+
+        .slide:nth-child(6) {
+            background-color: orange;
+        }
+
+        .btn {
+            font-size: 15px;
+            text-align: center;
+            font-weight: 900;
+            padding: 8px 20px;
+            color: lightgray;
+            background-color: darkblue;
+            border-radius: 10px;
+            margin-left: 25px;
+            cursor: pointer;
+            transition: .2s ease-in-out;
+        }
+
+        .btn:hover {
+            color: white;
+            background-color: darkgreen;
+        }
+
+        .button {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Heading -->
+    <div>
+        <h3>
+            21. Create a slider using JavaScript
+        </h3>
+    </div>
+
+    <!-- Slider Section -->
+    <section class="sec-1">
+        <div class="container">
+            <!-- Container for slides -->
+            <div class="slider slides">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+        </div>
+
+        <!-- Buttons for navigation -->
+        <div class="button">
+            <button class="btn" id="forwardBtn">Forward</button>
+            <button class="btn" id="backwardBtn">Backward</button>
+        </div>
+    </section>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- JavaScript for Slider -->
+    <script>
+        $(document).ready(function () {
+            // Select all slides
+            const slides = $('.slide');
+
+            // Initialize counter
+            let counter = 0;
+
+            // Set initial position of each slide
+            slides.each(function (index) {
+                $(this).css('left', `${index * 100}%`);
+            });
+
+            // Event handler for backward button
+            $('#backwardBtn').click(function () {
+                counter--;
+                slideColor();
+            });
+
+            // Event handler for forward button
+            $('#forwardBtn').click(function () {
+                counter++;
+                slideColor();
+            });
+
+            // Function to update slide positions and handle boundaries
+            const slideColor = function () {
+                slides.each(function () {
+                    $(this).css('transform', `translateX(-${counter * 100}%)`);
+                });
+
+                // Total number of slides
+                const totalSlides = 6;
+
+                // Handle counter boundaries
+                if (counter < 0) {
+                    counter = 0;
+                } else if (counter >= totalSlides) {
+                    counter = totalSlides - 1;
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

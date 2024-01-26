@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple jQuery CSS Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <h3>
+            2. How to Apply CSS Using JQuery.
+        </h3>
+    </div>
+
+    <div>
+        <span>Ans - </span>
+        <p>In this Example</p>
+        <ul>
+            <li>Include the jQuery library using a script tag.</li>
+            <li>Create a button and a paragraph in the HTML body.</li>
+            <li>
+                Use a script block to write jQuery code. Inside the
+                <h5>$(document).ready() function, handle a button click event using $("#applyStylesBtn").click().</h5>
+            </li>
+            <li>Use $("p").css() to apply CSS styles to the paragraph element when the button is clicked. You can
+                specify the styles as
+                key-value pairs within the curly braces.</li>
+        </ul>
+        <p>In this case, when you click the "Apply Styles" button, the paragraph will have a light blue background, dark
+            blue text
+            color, and a font size of 18 pixels. Adjust the styles according to your needs.</p>
+    </div>
+
+    <button id="applyStylesBtn">Apply Styles</button>
+    <p>This is a paragraph.</p>
+
+    <script>
+        $(document).ready(function () {
+            $("#applyStylesBtn").click(function () {
+                // Select the paragraph element and apply CSS styles
+                $("p").css({
+                    "background-color": "yellow",
+                    "color": "black",
+                    "font-size": "20px"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

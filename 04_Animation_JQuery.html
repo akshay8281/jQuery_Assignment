@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Define some basic styling for the element to be animated */
+        #animatedBox {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>04. JQuery Animation</h3>
+    <div>
+        <button id="animateBtn">Animate</button>
+    </div>
+    <div id="animatedBox"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Animation function
+            function performAnimation() {
+                $("#animatedBox").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                }, 1000, function () {
+                    // Animation complete callback
+                    $("#animatedBox").removeAttr('style'); // Reset styles after animation
+                });
+            }
+
+            // Click event to trigger the animation
+            $("#animateBtn").click(function () {
+                performAnimation();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

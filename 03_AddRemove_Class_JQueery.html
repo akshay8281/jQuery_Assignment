@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Add/Remove Class Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Define some CSS classes for styling */
+        .highlighted {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>
+            03. How to Add Class and Remove Class in Jquery
+        </h3>
+    </div>
+
+    <div>
+        <span>Ans - </span>
+        <p>Certainly! Here's a simple HTML program that demonstrates how to use jQuery to add and remove classes from an
+            element:</p>
+        <ul>
+            <li>Two buttons (Add Class and Remove Class) and a paragraph (<p>) element are created in the HTML body.
+            </li>
+            <li>CSS class .highlighted is defined with some styling properties.</li>
+            <li>The jQuery library is included using a script tag.</li>
+            <li>jQuery code inside $(document).ready() function adds and removes the class when buttons are clicked.
+                <ul>
+                    <li>$("#addClassBtn").click() adds the class "highlighted" to the paragraph when the "Add Class"
+                        button is clicked.</li>
+                    <li>$("#removeClassBtn").click() removes the class "highlighted" from the paragraph when the "Remove
+                        Class" button is
+                        clicked.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>This is a simple demonstration, and you can modify it to suit your specific requirements. When you click the
+            buttons,
+            you'll see the paragraph's background color and font weight change due to the addition and removal of the
+            "highlighted"
+            class.</p>
+    </div>
+
+    <div>
+        <button id="addClassBtn">Add Class</button>
+        <button id="removeClassBtn">Remove Class</button>
+        <p>This is a paragraph.</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Adding a class
+            $("#addClassBtn").click(function () {
+                $("p").addClass("highlighted");
+            });
+
+            // Removing a class
+            $("#removeClassBtn").click(function () {
+                $("p").removeClass("highlighted");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
